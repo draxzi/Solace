@@ -1,0 +1,42 @@
+# ── Dependencies ─────────────────────────────────────────────────────────────
+node_modules/
+
+# ── Build outputs ─────────────────────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+
+# ── Vite / bundler cache ──────────────────────────────────────────────────────
+.vite/
+.cache/
+
+# ── Environment variables / secrets ──────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Generated files ───────────────────────────────────────────────────────────
+src/.generated/
+
+# ── Replit internal ───────────────────────────────────────────────────────────
+.local/
+.agents/
+.replit-artifact/
+
+# ── Conversation attachments (not source code) ────────────────────────────────
+attached_assets/
+
+# ── Leftover archives ─────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.tar
+*.gz
+
+# ── OS artefacts ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+pnpm-debug.log*
