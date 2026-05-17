@@ -68,7 +68,7 @@ A warm, empathetic mental health companion web app powered by **Groq's Llama 3 7
 
 ---
 
-## Getting Started
+## Getting  Started
 
 ### Prerequisites
 
