@@ -1,0 +1,13 @@
+.git
+.gitignore
+README.md
+replit.md
+replit.nix
+.replit
+scripts
+lib
+.env.example
+*.log
+.DS_Store
+node_modules/.cache
+pnpm-lock.yaml.backup
