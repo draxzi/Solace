@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "framework": null,
+  "env": {
+    "GROQ_API_KEY": "@groq_api_key"
+  },
+  "functions": {
+    "artifacts/api-server/dist/index.mjs": {
+      "runtime": "nodejs20.x",
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "/?_route=:1"
+    }
+  ]
+}
