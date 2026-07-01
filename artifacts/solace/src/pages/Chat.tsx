@@ -107,7 +107,7 @@ const ONE_GOOD_THING_STEPS = [
   "Whatever it was — even something tiny — it counts. It was real. You found it.",
 ];
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────────────────[...]
 
 function newId() { return Math.random().toString(36).slice(2); }
 
@@ -145,7 +145,7 @@ const LISTEN_ACKS = [
   "I hear every word 🤍",
 ];
 
-// ── Colours ───────────────────────────────────────────────────────────────────
+// ── Colours ───────────────────────────────────────────────────────────[...]
 
 function getChatBg(isGhost: boolean, is3AM: boolean) {
   if (isGhost) return "linear-gradient(180deg, #1D1A39 0%, #2A114B 100%)";
@@ -178,7 +178,7 @@ function getMsgBubbleBorder(isGhost: boolean, is3AM: boolean) {
   return "rgba(130,77,105,0.2)";
 }
 
-// ── Component ─────────────────────────────────────────────────────────────────
+// ── Component ──────────────────────────────────────────────────────────…[...]
 
 export default function Chat() {
   const [, navigate] = useLocation();
@@ -237,7 +237,7 @@ export default function Chat() {
       }
     }
     return undefined;
-  }, [isGhostMode]);
+  }, [isGhostMode, prefs]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -252,7 +252,7 @@ export default function Chat() {
       preview: buildPreview(messages),
     };
     saveConversation(updated);
-  }, [messages, isGhostMode]);
+  }, [messages, isGhostMode, currentConv]);
 
   const addMessage = useCallback((msg: Omit<ChatMessage, "id" | "timestamp">, ghost = false) => {
     const full: ChatMessage = { ...msg, id: newId(), timestamp: Date.now() };
@@ -264,7 +264,7 @@ export default function Chat() {
   function getMicroCelebrationContext(): string | null {
     const negCount = countNegativeRecentMoods();
     if (negCount >= 3) {
-      return `The user has been having a hard time recently (${negCount} negative mood entries in the last 7 days). If they express anything positive today — feeling better, having a good moment — gently and warmly celebrate it with them. Something like: "You were having such a hard time recently. I'm really glad today feels a little different. That matters."`;
+      return `The user has been having a hard time recently (${negCount} negative mood entries in the last 7 days). If they express anything positive today — feeling better, having a good moment, or even just surviving — celebrate it warmly and genuinely. These small wins matter.`;
     }
     return null;
   }
