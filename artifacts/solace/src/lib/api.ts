@@ -21,7 +21,9 @@ export async function sendChatMessage(params: {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(params),
   });
-  if (!res.ok) throw new Error("Failed to get response");
+  if (!res.ok) {
+    throw new Error(`Failed to get response: ${res.status} ${res.statusText}`);
+  }
   return res.json();
 }
 
@@ -35,6 +37,8 @@ export async function respondToCheckin(params: {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(params),
   });
-  if (!res.ok) throw new Error("Failed to get response");
+  if (!res.ok) {
+    throw new Error(`Failed to get response: ${res.status} ${res.statusText}`);
+  }
   return res.json();
 }
